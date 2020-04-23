@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/efd92865ea.js" crossorigin="anonymous"></script>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        html{
+  background:white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+}
+.container{
+  background: #fff;
+  width: 100%;
+  /* margin: 1rem auto; */
+  box-sizing: border-box;
+  /* text-align: center; */
+}
+.top-nav{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 20;
+    background-color: rgba(255,255,255,0.99);
+    /* border:1px solid black; */
+}
+/* img{
+  margin: 0 auto;
+} */
+.hero-img{
+  height: 3.4vh;
+  width: 120px;
+  margin-top: 20px;
+  margin-left:8%;
+}
+.side-nav
+{
+    position: fixed;
+    width: 20%;
+    left:0;
+    background-color: white;
+    height: 90vh;
+    /* border:1px solid; */
+}
+.js-search-results{
+  position: relative;
+  width: 80%;
+  background-color: #F5F5F5;
+  left:20%;
+  min-height: 90vh;
+}
+button{
+  font-weight: bold;
+  background-color:#F5F5F5;
+  height: 4.5vh;
+  width: 10%;
+  margin-left: -5px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  padding: 0.25em 0.5em;
+  color: grey;
+  border:1.5px solid lightgray;
+  cursor: pointer;
+}
+
+.outer
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 180px;
+    padding-top:15px;
+    margin-top: 10px;
+}
+.inner1
+{
+    width: 20%;
+    height: 180px;
+}
+.inner1 img{
+    width:270px;
+    height: 170px;
+}
+.inner2
+{
+    width: 71.5%;
+    text-align: left;
+    height: 150px;
+}
+.inner2 h2,.inner2 p{
+    width: 80%;
+}
+.inner2 h2{
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 0px;
+}
+.inner2 p{
+    font-size: 1rem;
+}
+hr
+{
+    opacity: 0.3;
+    width: 84%;
+    position: absolute;
+    left: 30px;
+    
+}
+.inner2{
+    color:rgba(0,0,0,0.6);
+}
+i:hover{cursor: pointer;}
+i.fa-bars
+{
+    font-size: 1.5rem;
+    margin-left: 10%;
+    color: rgba(0,0,0,0.7);
+    cursor: pointer;
+    
+}
+.right-nav > i,.fa-filter{
+
+    font-size: 1.2rem;
+    margin-left: 10%;
+    color: rgba(0,0, 0, 0.66);
+}
+.fa-filter{margin-left: 3% !important;}
+.js-search-results h5.heading5
+{font-size: 1.2rem;color: gray;font-weight: lighter;}
+.left-nav
+{
+    width: 20%;
+    float: left;
+    /* border:1px solid; */
+}
+.center-nav
+{
+    margin: 0 auto;
+    width: 38.5%;
+    /* border:1px solid; */
+}
+.right-nav
+{
+    width: 20%;
+    
+    /* border: 1px solid; */
+}
+.js-query
+{
+   
+    width: 89%;
+    height: 4vh;
+    border:1.5px solid lightgrey;
+    border-radius: 2px;
+    outline: none;
+}
+::placeholder
+{
+    padding: 10px;
+    margin-left: 10px;
+    color: gray;
+}
+.loginImg{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* background-color: purple; */
+    margin-left: 20%;
+    
+    background-image: url("author-2.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+    position: relative;
+    top:10px;
+}
+.upper-nav
+{
+    width: 100%;
+    height: 25%;
+    border-bottom:1px solid rgba(0,0,0,0.2);
+}
+.mid-nav
+{
+    width: 100%;
+    height: 46%;
+    border-bottom:1px solid rgba(0,0,0,0.2);
+    
+}
+.bottom-nav
+{
+    width: 100%;
+    height: 29%;
+    border-bottom:1px solid rgba(0,0,0,0.2);
+   
+}
+.upper-nav h5,.mid-nav h5,.bottom-nav h5{
+    font-size: 1rem;
+    color: rgba(0,0, 0, 0.66);
+    line-height: 5vh;
+    /* font-weight: lighter; */
+    margin-left: 10%;
+}
+.upper-nav h5 i,.mid-nav h5 i
+{
+    font-size: 1.2rem;
+    margin-right: 10%;
+}
+.bottom-nav h5 img
+{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 7%;
+    margin-top:2vh;
+    display: inline-block;
+}
+a{text-decoration: none;color:rgba(0,0, 0, 0.6) ;}
+.bottom-nav h4{
+    letter-spacing: 1px;
+    color: rgba(0,0, 0, 0.66);
+    font-weight: bold;
+    margin-left: 10%;
+}
+.bottom-nav h5 span{
+    position: relative;
+    top: -7px;
+}
+.vidLink{cursor: pointer;}
+    </style>
+
+</head>
+<body onload="recent();">
+
+    <div class="container">
+        <nav class="top-nav">
+
+            <div class="left-nav">
+            <i class="fas fa-bars"></i>
+        <a href="YoutubeSearchClone.html"><img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/2000px-YouTube_Logo_2017.svg.png" alt="youtube-logo"></a>
+
+          </div>
+
+          <div class="center-nav">
+        <form action="#" class="js-search-form">
+          <label for="query"></label>
+          <input type="text" class="js-query" placeholder="Search">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+          </div>
+
+          <div class="right-nav">
+            <i class="fas fa-video"></i>
+            <i class="fas fa-th"></i>
+            <i class="fas fa-bell"></i>
+            <div class="loginImg"></div>
+          </div>
+        </nav>
+
+        <nav class="side-nav">
+         <div class="upper-nav">
+             <br/>
+        <a href="#"><h5><i class="fas fa-home"></i>Home</h5></a>
+        <a href="#"><h5><i class="fas fa-fire"></i>Trending</h5></a>
+        <a href="#"><h5><i class="fab fa-youtube-square"></i>Subscriptions</h5></a>
+         </div>
+         <div class="mid-nav">
+             <br/>
+          <a href="#"><h5><i class="fas fa-photo-video"></i>Library</h5></a>
+          <a href="#"><h5><i class="fas fa-history"></i>History</h5></a>
+          <a href="#"><h5><i class="fas fa-compact-disc"></i>Your videos</h5></a>
+          <a href="#"><h5><i class="fas fa-clock"></i>Watch later</h5></a>
+          <a href="#"><h5><i class="fas fa-thumbs-up"></i>Liked videos</h5></a>
+          <br/>
+          <a href="#"><h5><i class="fas fa-chevron-down"></i>Show more</h5></a>
+         </div>
+         <div class="bottom-nav">
+          <br/>
+          <h4>SUBSCRIPTIONS</h4><br/>
+          <a href="#"><h5><img src="5.jpg"/><span>Cake Recipes</span></h5></a>
+          <a href="#"><h5><img src="f2.jpeg"/><span>Fashion City</span></h5></a>
+         </div>
+        </nav>
+        <div class="js-search-results">
+       
+        </div>
+    </div>
+
+    <!-- <script src="jquery-3.4.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+// call recent function when the body is loaded (when page is shown the videos matching recent are already fetched and shown onload)
+const key='AIzaSyBmCeZGySFeXcXHKOTBeccnqfaW_l0l4bU';
+function recent(){
+    const url='https://www.googleapis.com/youtube/v3/search?';
+
+
+const  part='snippet';
+var query=`recent`; // recent (matching) posts fetched
+  $.ajax({
+    url:url+"&part=snippet"+"&key="+key+"&q="+query+"&maxResults=10&type=video", // by default maxResults' value is 5 and its max value can be 50
+    dataType:'json',
+    type:'GET',
+    success:function(data,status){
+        console.log(status);
+        // console.log(data);
+        
+        displayYoutubeVids(data);
+    },
+    error:function(response,status)
+    {
+        console.log(status);
+    }
+  });
+ 
+}
+
+function getVidsFromAPI(searchInput){
+    const url='https://www.googleapis.com/youtube/v3/search?';
+
+const  part='snippet';
+var query=`${searchInput}`; // value entered in search input field
+  $.ajax({
+    url:url+"&part=snippet"+"&key="+key+"&q="+query+"&maxResults=10", // by default maxResults' value is 5 and its max value can be 50
+    dataType:'json',
+    type:'GET',
+    success:function(data,status){
+        console.log(status);
+        // console.log(data);
+        displayYoutubeVids(data);
+    },
+    error:function(response,status)
+    {
+        console.log(status);
+    }
+  });
+ 
+}
+function getMonthStr(month)
+{
+	if(month == '01'){return 'Jan';}
+	else if(month == '02'){return 'Feb';}
+	else if(month == '03'){return 'March';}
+	else if(month == '04'){return 'April';}
+	else if(month == '05'){return 'May';}
+	else if(month == '06'){return 'June';}
+	else if(month == '07'){return 'July';}
+	else if(month == '08'){return 'Aug';}
+	else if(month == '09'){return 'Sep';}
+	else if(month == '10'){return 'Oct';}
+	else if(month == '11'){return 'Nov';}
+	else{return 'Dec';}
+}
+function renderResult(result) {
+   
+   var vidWatch = "https://www.youtube.com/embed/"; // play a video on youtube and check url on search bar would be https://www.youtube.com/watch?v=videoId
+   var vidID = result.id.videoId;
+
+	// alert('hello');
+  let vidTitle=result.snippet.title; // video title
+  let thumbnailURL=result.snippet.thumbnails.default.url; // contains default image for video as its extension is .jpg(thumbnails=> images for videos)
+  let channelTitle = result.snippet.channelTitle; 
+
+  // To show when video was uploaded
+
+  let years = result.snippet.publishedAt.substring(0,4);
+  let month= result.snippet.publishedAt.substring(5,7);
+  let date2= result.snippet.publishedAt.substring(8,10);
+  var monthStr = getMonthStr(month);
+  var vidDate= date2 + " " + monthStr + " " + years;
+
+  var date=new Date();
+  var currentYear=date.getFullYear();
+  let showAgo1 = currentYear-years;
+  var currentMonth=date.getMonth()+1;
+  let showAgo2=currentMonth-month;
+  var currentDate = date.getDate();
+  let showAgo3=currentDate-date2;
+  let showAgo=showAgo1;
+
+  var str="years ago";
+  if(showAgo1==1){str="year ago";}
+if(showAgo1==0)
+{
+   
+    showAgo=showAgo2;
+    str="months ago";
+    if(showAgo2==1){str="month ago";}
+ }
+ if(showAgo1==0 && showAgo2==0)
+ {
+     showAgo=showAgo3;
+     str="days ago";
+     if(showAgo3==0){showAgo="";str="today";}
+     if(showAgo3==1){str="day ago";}
+     
+ }
+ 
+  // description(info about the video)
+
+  let description = result.snippet.description;
+
+  console.log(result);
+  // console.log(vidWatch+vidID); // the url to specific play video
+  
+  $('.js-search-results').append(`<div class="outer"><div class="inner1"><span class="vidLink" onclick="visitVid('${vidWatch}','${vidID}','${vidTitle}','${vidDate}');"><img src="${thumbnailURL}" title="${vidTitle}" alt="${vidTitle}"></span></div><div class="inner2"><span class="vidLink" onclick="visitVid('${vidWatch}','${vidID}','${vidTitle}','${vidDate}');"><h2>${vidTitle}</h2></span><br/><h4><span>${channelTitle}</span>&nbsp;&nbsp;<i class="fas fa-check-circle"></i>&nbsp;&nbsp;<span>${showAgo} ${str}</span></h4><br/><p>${description}</p></div></div>`);
+}
+
+function visitVid(vidWatch,vidID,vidTitle,vidDate)
+{
+	// other api
+
+
+// var query=`${searchInput}`; // value entered in search input field
+  $.ajax({
+  	// url+"&part=snippet"+"&key="+key+"&q="+query+"&maxResults=20",
+    url:"https://www.googleapis.com/youtube/v3/videos?&part=snippet%2Cstatistics&id="+ vidID + "&key=" + key,
+    dataType:'json',
+    type:'GET',
+    success:function(data,status){
+        console.log(status,data);
+        // console.log(data);
+        displayStats(data,vidDate);
+    },
+    error:function(response,status)
+    {
+        console.log(status);
+    }
+  });
+
+	$('.side-nav').fadeOut();
+	$('.js-search-results').css({'left':'69%','width':'31%'});
+	$('.vidLink img').css({'width':'170','height':'140'});
+	$('.vidLink h2').css('font-size','1rem');
+	$('.inner2 p').hide();
+	$('.inner2 span:nth-child(3)').css({'display':'block','position':'relative','top':'1vh'});
+	$('.inner2 span').css('font-weight','lighter');
+	$('.inner2 h2,.inner2 h4,.inner2 p').css({'width':'80%','position':'relative','left':'20%'});
+	$('.inner2 h4').css('font-size','1rem');
+	$('.inner1').css('height','35px');
+	$('.outer').css('height','auto');
+	$('.container').append('<div class="mainVid"></div>');
+	$('.mainVid').html(" ");
+	$('.mainVid').css({'background':'#F5F5F5','width':'69%','min-height':'252vh','position':'absolute','left':'0','top':'0','z-index':'5'});
+	$('.mainVid').append(`<div class="play"><iframe style="width:100%;" src='${vidWatch+vidID}' height="600" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/><br/><h2>${vidTitle}</h2><div class="play2"></div></div>`);
+    $('.play').css({'position':'relative','left':'2%','top':'140px','display':'inline-block','width':'95%','minWidth':'950px'});
+	$('.play').append('<i class="fas fa-arrow-left" onclick="back();"></i>');
+	$('.fa-arrow-left').css({'display':'inline-block','position':'absolute','left':'0px','top':'-36px','color':'grey','font-size':'1.5rem'});
+    $('.play h2').css({'font-weight':'lighter','width':'92%'});
+    
+     $.ajax({
+  	// url+"&part=snippet"+"&key="+key+"&q="+query+"&maxResults=20",
+  	// "https://www.googleapis.com/youtube/v3/commentThreads?key=" + apiKey + "&videoId=" + videoId + "&part=snippet&maxResults=50",
+    url:"https://www.googleapis.com/youtube/v3/commentThreads?&part=snippet%2Creplies&videoId="+ vidID + "&key=" + key + "&maxResults=8",
+    dataType:'json',
+    type:'GET',
+    success:function(data,status){
+        console.log(status,data);
+        console.log("comments");
+        $('.container').append('<div class="commVid"></div>');
+        $('.play').append("<ul class='commList'></ul>");
+        $('.commList').css({'list-style':'none','position':'relative','top':'10vh'});
+
+        for (var i = 0; i < data.items.length; i++) {
+
+					// Dp & AccountName
+					$('ul.commList').append(`<li><img src='${data.items[i].snippet.topLevelComment.snippet.authorProfileImageUrl}'>&nbsp;&nbsp;&nbsp;<h3>` + data.items[i].snippet.topLevelComment.snippet.authorDisplayName) + `</h3>`;
+					// comment 
+					$('ul.commList').append(`<br/><p class="para">` + data.items[i].snippet.topLevelComment.snippet.textDisplay + `</p></li><br/>`);
+					$('.commList li img').css({'border-radius':'50%'});
+                    $('.commList li h3').css({'display':'inline-block','position':'relative','top':'-3.6vh'});
+                    $('.commList .para').css({'display':'inline-block','position':'relative','top':'-5vh','left':'6%','width':'90%'});
+			}
+
+    },
+    error:function(response,status)
+    {
+        console.log(status);
+    }
+  });
+    
+}
+function displayStats(resultStat,vidDate)
+    {
+    	var views,likes,dislikes,commentsCount;
+    	views = `${resultStat.items[0].statistics.viewCount}`;
+        likes = `${resultStat.items[0].statistics.likeCount}`;
+        dislikes = `${resultStat.items[0].statistics.dislikeCount}`;
+        commentsCount = `${resultStat.items[0].statistics.commentCount}`;
+        console.log(views,likes,dislikes,commentsCount);
+        $('.play').append(`<h4 style="margin-top:-5px;color:grey;">${views} views .${vidDate}</h4>`);
+        $('.play h4').css('font-weight','lighter');
+        $('.play2').css('display','inline-block');
+        $('.play2').append(`<h4><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;${likes} &nbsp;&nbsp;&nbsp; <i class="fas fa-thumbs-down"></i>&nbsp;&nbsp; ${dislikes} &nbsp; &nbsp; ${commentsCount} comments</h4>`);
+        $('.play2').css({'position':'relative','left':'67%','position':'relative','top':'10px'});
+        $('.play2 h4').css('color','grey');
+
+
+    }
+function back()
+{
+	$('.side-nav').fadeIn(0);
+	$('.js-search-results').css({'left':'20%','width':'80%'});
+	$('.vidLink img').css({'width':'270','height':'170'});
+	$('.vidLink h2').css('font-size','1.3rem');
+	$('.inner2 p').show();
+	$('.inner2 span:nth-child(3)').css({'display':'inline','position':'relative','top':'0vh'});
+	$('.inner2 span').css('font-weight','bolder');
+	$('.inner2 h2,.inner2 h4,.inner2 p').css({'width':'70%','position':'relative','left':'0%'});
+	$('.inner2 h4').css('font-size','1rem');
+	$('.inner1').css('height','180px');
+	$('.outer').css('height','180px');
+    $('.mainVid').remove();
+    
+}
+function displayYoutubeVids(data){
+    $('.js-search-results').append(`<br/><h5 class="heading5"><i class="fas fa-filter"></i>&nbsp;&nbsp;FILTER</h5><br><hr><br>`);
+var results=$.map(data.items,(item)=>renderResult(item)); // for each item in array(data.items) call this function renderResult
+
+}
+
+function handleSubmit() {
+
+  $('.js-search-form').submit(event=>{
+      $('.js-search-results').html(""); // clean previous results and show the new searched results
+    event.preventDefault();
+    const query=$('.js-query').val();
+    getVidsFromAPI(query); // call function to get results/videos that match this query(keyword) 
+  });
+}
+
+handleSubmit();
+</script>
+</body>
+</html>
